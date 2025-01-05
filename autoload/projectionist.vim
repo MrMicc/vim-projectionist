@@ -300,7 +300,7 @@ function! g:projectionist_transformations.dirname(input, o) abort
   
     echo "l:input: " . a:input
     echo "a:o: " . string(a:o)
-    let l:prefix = matchstr(a:o, '#\ZS.*')
+    let l:prefix = matchstr(a:o.match, '#\ZS.*')
   if l:prefix != ''
       let l:input = substitute(a:input, '^' . l:prefix . '/', '', '') 
   endif
