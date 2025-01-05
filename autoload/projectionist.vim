@@ -301,6 +301,7 @@ function! g:projectionist_transformations.dirname(input, o) abort
   if l:prefix != ''
       let l:input = substitute(a:input, '^' . l:prefix . '/', '', '') 
   endif
+ echo "l:input: " . l:input
   return a:input !~# '/' ? '.' : substitute(a:input, '/[^/]*$', '', '')
 endfunction
 
