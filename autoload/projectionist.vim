@@ -297,6 +297,10 @@ function! g:projectionist_transformations.snakecase(input, o) abort
 endfunction
 
 function! g:projectionist_transformations.dirname(input, o) abort
+  let l:prefix = matchstr(a:o, '#\ZS.*')
+  if lets:prefix != ''
+      let l:input = substitute(a:input, '^' . l:prefix . '/', '', '') 
+  endif
   return a:input !~# '/' ? '.' : substitute(a:input, '/[^/]*$', '', '')
 endfunction
 
