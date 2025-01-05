@@ -298,7 +298,7 @@ endfunction
 
 function! g:projectionist_transformations.dirname(input, o) abort
   
-    echo "l:input: " . l:input
+    echo "l:input: " . a:input
     echo "a:o: " . a:o
     let l:prefix = matchstr(a:o, '#\ZS.*')
   if l:prefix != ''
